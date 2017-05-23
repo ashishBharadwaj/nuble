@@ -1,0 +1,72 @@
+.header {
+    width: 100%;
+    height: 100px;
+    background-color: #f4b321;
+}
+
+body,
+html {
+    height: 100%;
+    margin: auto;
+}
+
+.gameContainer {
+    background-color: #73cfe8;
+    height: 100%;
+}
+
+.leftLayoutContainer,
+.rightLayoutContainer {
+    width: 20%;
+    float: left;
+}
+
+.centerLayoutContainer {
+    width: 60%;
+    float: left;
+}
+
+.innerLayoutContainer {
+    padding: 10px;
+}
+
+.displayContainer {
+    padding: 10px;
+}
+
+.displayInner {
+    width: 70%;
+    margin: auto;
+}
+
+.icon {
+    color: yellow;
+    margin-right: 5px;
+}
+
+.buttonsContainer {
+    margin-top: 100px;
+}
+
+.button {
+    width: 70%;
+    margin: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+.undoButton {
+    background-color: #f8931f;
+}
+
+.newGameButton {
+    background-color: #8cc63e;
+}
+
+.autoSolveButton {
+    background-color: #D2135A;
+}
