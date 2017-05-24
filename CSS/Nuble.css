@@ -70,3 +70,36 @@ html {
 .autoSolveButton {
     background-color: #D2135A;
 }
+
+#gameGridContainer{
+    width: 448px;
+    height: 448px;
+    margin: auto;
+    border: 1px solid #63B5CB;
+    color: #444;
+    padding: 5px;
+    background-color: #63B5CB;
+    border-radius: 10px;
+}
+.row{
+    width: 448px;
+    height: 112px;
+}
+.column{
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    padding: 25px;
+    font-size: 40px;
+    border: 1px solid gray;
+    margin: 5px;
+    border-radius: 10px;
+    background-color: #EBEBEB;
+    font-weight: 600;
+}
+.empty{
+    background-color: #5DA8BD;
+    border: 1px solid #5DA8BD;
+}
