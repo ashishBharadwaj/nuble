@@ -115,8 +115,8 @@ function move(obj) {
     var posX = parseInt(obj.getAttribute("data-index").split(",")[0]),
         posY = parseInt(obj.getAttribute("data-index").split(",")[1]);
 
-    if (posX - 1 === emptyPosX && posY === emptyPosY || posX + 1 === emptyPosX && posY === emptyPosY ||
-        posX === emptyPosX && posY - 1 === emptyPosY || posX === emptyPosX && posY + 1 === emptyPosY) {
+    if ((posX - 1 === emptyPosX && posY === emptyPosY) || (posX + 1 === emptyPosX && posY === emptyPosY) ||
+        (posX === emptyPosX && posY - 1 === emptyPosY) || (posX === emptyPosX && posY + 1 === emptyPosY)) {
         swapTile(obj, posX, posY);
     }
 }
