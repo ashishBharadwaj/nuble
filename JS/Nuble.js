@@ -18,7 +18,7 @@ function generateRandomArray(size) {
     return arrValues;
 }
 
-// function to generate an random number within a given range
+// function to generate a random number within a given range
 // @param: min : start range (inclusive) 
 // @param: max : end range (inclusive)
 function getRandomInt(min, max) {
@@ -128,6 +128,7 @@ function move(obj) {
     }
 }
 
+// function to restore the state of game on click of undo button
 function undoGameGrid() {
     var index = arrGameState[arrGameState.length - 1],
         posX = parseInt(arrGameState[arrGameState.length - 1].split(",")[0]),
