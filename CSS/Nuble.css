@@ -1,13 +1,13 @@
-.header {
-    width: 100%;
-    height: 100px;
-    background-color: #f4b321;
-}
-
 body,
 html {
     height: 100%;
     margin: auto;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    background-color: #f4b321;
 }
 
 .gameContainer {
@@ -37,6 +37,7 @@ html {
 .displayInner {
     width: 70%;
     margin: auto;
+    padding: 10px;
 }
 
 .icon {
@@ -71,7 +72,7 @@ html {
     background-color: #D2135A;
 }
 
-#gameGridContainer{
+#gameGridContainer {
     width: 448px;
     height: 448px;
     margin: auto;
@@ -81,11 +82,13 @@ html {
     background-color: #63B5CB;
     border-radius: 10px;
 }
-.row{
+
+.row {
     width: 448px;
     height: 112px;
 }
-.column{
+
+.column {
     width: 50px;
     height: 50px;
     display: inline-block;
@@ -98,8 +101,10 @@ html {
     border-radius: 10px;
     background-color: #EBEBEB;
     font-weight: 600;
+    cursor: pointer;
 }
-.empty{
+
+#empty {
     background-color: #5DA8BD;
     border: 1px solid #5DA8BD;
 }
