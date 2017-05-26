@@ -136,7 +136,7 @@ function populateGameGrid(isAutoSolve) {
     }
 
     moves = 0;
-    movesDiv.innerHTML = "MOVES :";
+    movesDiv.innerHTML = "";
     arrGameState = [];
     gameGrid.innerHTML = "";
     emptyPosX = ei;
@@ -179,7 +179,7 @@ function move(obj) {
         swapTile(obj, posX, posY);
         arrGameState.push("" + emptyPosX + "," + emptyPosY);
         moves += 1;
-        movesDiv.innerHTML = "MOVES : " + moves;
+        movesDiv.innerHTML = "" + moves;
     }
 }
 
@@ -193,7 +193,7 @@ function undoGameGrid() {
     swapTile(document.querySelectorAll("[data-index='" + index + "']")[0], posX, posY);
     arrGameState.pop();
     moves -= 1;
-    movesDiv.innerHTML = "MOVES : " + moves;
+    movesDiv.innerHTML = "" + moves;
 }
 
 

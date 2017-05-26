@@ -109,3 +109,8 @@ html {
     background-color: #5DA8BD;
     border: 1px solid #5DA8BD;
 }
+
+#moves,
+#time {
+    font-weight: 600;
+}
