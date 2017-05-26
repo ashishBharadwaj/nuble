@@ -5,7 +5,11 @@ var arraySolveState = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 var solveStatePosX = 3;
 var solveStatePosY = 3;
 var arrGameState = [];
-
+var moves = 0;
+var seconds = 0;
+var minutes = 0;
+var hours = 0;
+var timeOut;
 // function to generate an array of random numbers 
 // @param: size : size of the array 
 function generateRandomArray(size) {
@@ -75,6 +79,26 @@ function check() {
     }
 }
 
+function timer() {
+    timeOut = setTimeout(add, 1000);
+}
+
+function add() {
+    var timeDiv = document.getElementById("time");
+    seconds++;
+    if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+        if (minutes >= 60) {
+            minutes = 0;
+            hours++;
+        }
+    }
+
+    timeDiv.innerHTML = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+
+    timer();
+}
 // function to populate the game grid 
 function populateGameGrid(isAutoSolve) {
     var i = 0,
@@ -86,8 +110,9 @@ function populateGameGrid(isAutoSolve) {
             []
         ],
         htmlChunk = "",
+        movesDiv = document.getElementById("moves"),
+        timeDiv = document.getElementById("time"),
         gameGrid = document.getElementById("gameGridContainer");
-
 
     if (isAutoSolve) {
         arrValues = arraySolveState.slice();
@@ -110,6 +135,8 @@ function populateGameGrid(isAutoSolve) {
         }
     }
 
+    moves = 0;
+    movesDiv.innerHTML = "MOVES :";
     arrGameState = [];
     gameGrid.innerHTML = "";
     emptyPosX = ei;
@@ -129,6 +156,12 @@ function populateGameGrid(isAutoSolve) {
     }
 
     gameGrid.innerHTML = htmlChunk;
+    seconds = 0;
+    minutes = 0;
+    hours = 0;
+    timeDiv.innerHTML = "00:00:00";
+    clearTimeout(timeOut);
+    timer();
 }
 
 // function invoked wehn a grid element is clicked 
@@ -137,6 +170,7 @@ function move(obj) {
     var posX = parseInt(obj.getAttribute("data-index").split(",")[0]),
         posY = parseInt(obj.getAttribute("data-index").split(",")[1]),
         emptyDiv = document.getElementById("empty"),
+        movesDiv = document.getElementById("moves"),
         emptyPosX = parseInt(emptyDiv.getAttribute("data-index").split(",")[0]),
         emptyPosY = parseInt(emptyDiv.getAttribute("data-index").split(",")[1]);
 
@@ -144,17 +178,22 @@ function move(obj) {
         (posX === emptyPosX && posY - 1 === emptyPosY) || (posX === emptyPosX && posY + 1 === emptyPosY)) {
         swapTile(obj, posX, posY);
         arrGameState.push("" + emptyPosX + "," + emptyPosY);
+        moves += 1;
+        movesDiv.innerHTML = "MOVES : " + moves;
     }
 }
 
 // function to restore the state of game on click of undo button
 function undoGameGrid() {
     var index = arrGameState[arrGameState.length - 1],
+        movesDiv = document.getElementById("moves"),
         posX = parseInt(arrGameState[arrGameState.length - 1].split(",")[0]),
         posY = parseInt(arrGameState[arrGameState.length - 1].split(",")[1]);
 
     swapTile(document.querySelectorAll("[data-index='" + index + "']")[0], posX, posY);
     arrGameState.pop();
+    moves -= 1;
+    movesDiv.innerHTML = "MOVES : " + moves;
 }
 
 
