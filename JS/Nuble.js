@@ -136,7 +136,7 @@ function populateGameGrid(isAutoSolve) {
     }
 
     moves = 0;
-    movesDiv.innerHTML = "";
+    movesDiv.innerHTML = "0";
     arrGameState = [];
     gameGrid.innerHTML = "";
     emptyPosX = ei;
