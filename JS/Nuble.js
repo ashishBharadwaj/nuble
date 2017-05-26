@@ -18,11 +18,19 @@ function generateRandomArray(size) {
     return arrValues;
 }
 
-// function to generate a random number within a given range
-// @param: min : start range (inclusive) 
-// @param: max : end range (inclusive)
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+// function to convert one dimentional array to 2 dimentional array 
+// @param: arr : input 1D array 
+function convertTo2D(arr) {
+    var arr2D = [],
+        i = 0,
+        j = 0;
+    for (i = 0; i < 4; i++) {
+        arr2D[i] = [];
+        for (j = 0; j < 4; j++) {
+            arr2D[i][j] = arr[i * 4 + j];
+        }
+    }
+    return arr2D;
 }
 
 // function to check if an array is sorted 
@@ -62,8 +70,6 @@ function swapArrElement(i, j) {
 
 // function to check if puzzle is solved
 function check() {
-    var emptyPos = document.getElementById("empty").getAttribute("data-index");
-
     if (isSorted(arrValues)) {
         alert("You have successfully solved the puzzle!!!!");
     }
@@ -76,6 +82,9 @@ function populateGameGrid(isAutoSolve) {
         ei = 0,
         ej = 0,
         count = 0,
+        grid2D = [
+            []
+        ],
         htmlChunk = "",
         gameGrid = document.getElementById("gameGridContainer");
 
@@ -86,15 +95,25 @@ function populateGameGrid(isAutoSolve) {
         ej = solveStatePosY;
     } else {
         arrValues = generateRandomArray(16);
-        ei = getRandomInt(0, 3);
-        ej = getRandomInt(0, 3);
+        grid2D = convertTo2D(arrValues);
+        while (!isSolvable(grid2D)) {
+            arrValues = generateRandomArray(16);
+            grid2D = convertTo2D(arrValues);
+        }
+        for (i = 0; i < grid2D.length; i++) {
+            for (j = 0; j < grid2D[0].length; j++) {
+                if (grid2D[i][j] === 16) {
+                    ei = i;
+                    ej = j;
+                }
+            }
+        }
     }
 
     arrGameState = [];
     gameGrid.innerHTML = "";
     emptyPosX = ei;
     emptyPosY = ej;
-    swapArrElement(arrValues.indexOf(16), ei * 4 + ej);
 
     for (i = 0; i < 4; i++) {
         htmlChunk += "<div class='row'>";
@@ -141,9 +160,9 @@ function undoGameGrid() {
 
 // function to bind the button click event 
 function bindButtonClick() {
-    var newGame = document.getElementById("newGame");
-    var autoSolve = document.getElementById("autoSolve");
-    var undo = document.getElementById("undo");
+    var newGame = document.getElementById("newGame"),
+        autoSolve = document.getElementById("autoSolve"),
+        undo = document.getElementById("undo");
 
     newGame.addEventListener('click', function() {
         populateGameGrid();
