@@ -79,10 +79,12 @@ function check() {
     }
 }
 
+//function to set timout of the timer function to 1 second
 function timer() {
     timeOut = setTimeout(add, 1000);
 }
 
+// function to render timer
 function add() {
     var timeDiv = document.getElementById("time");
     seconds++;
@@ -99,6 +101,7 @@ function add() {
 
     timer();
 }
+
 // function to populate the game grid 
 function populateGameGrid(isAutoSolve) {
     var i = 0,
