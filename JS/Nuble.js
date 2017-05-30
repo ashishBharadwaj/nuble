@@ -38,6 +38,7 @@ function convertTo2D(arr) {
 }
 
 // function to check if an array is sorted 
+// @param: array : input array
 function isSorted(array) {
     for (var i = 0; i < array.length; i++) {
         if (array[i] > array[i + 1]) {
@@ -65,6 +66,8 @@ function swapTile(obj, posX, posY) {
 }
 
 // function to swap two elements of global array
+// @param: i : 1st index 
+// @param: j : 2nd index
 function swapArrElement(i, j) {
     var temp = arrValues[i];
 
@@ -103,6 +106,7 @@ function add() {
 }
 
 // function to populate the game grid 
+// @param: isAutoSolve : flag to check if the grid needs to rendered in the solved state
 function populateGameGrid(isAutoSolve) {
     var i = 0,
         j = 0,
@@ -207,7 +211,7 @@ function bindButtonClick() {
         undo = document.getElementById("undo");
 
     newGame.addEventListener('click', function() {
-        populateGameGrid();
+        populateGameGrid(false);
     });
     autoSolve.addEventListener('click', function() {
         populateGameGrid(true);
