@@ -1,4 +1,4 @@
-// global variables for storing the grid as an array, position of the empty box and the solve state 
+// global variables
 var arrValues = [];
 var emptyPosX, emptyPosY;
 var arraySolveState = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
@@ -10,6 +10,7 @@ var seconds = 0;
 var minutes = 0;
 var hours = 0;
 var timeOut;
+
 // function to generate an array of random numbers 
 // @param: size : size of the array 
 function generateRandomArray(size) {
