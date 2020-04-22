@@ -2,7 +2,7 @@
 
 It is a simple grid game written in HTML CSS and vanilla javaScript.
 
-<img src="screenshot.png" alt="Nubel Screenshot"/>
+<img src="assets/screenshot.png" alt="Nubel Screenshot"/>
 
 ## How to play
 
@@ -25,3 +25,6 @@ $ git clone https://github.com/ashishBharadwaj/nuble.git
     - Option to retract the previous steps taken to solve the puzzle.
     - Time tracking
     - Auto solve
+
+## License
+    MIT Copyright (c) 2020 Ashish Bharadwaj J
