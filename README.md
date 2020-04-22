@@ -2,7 +2,7 @@
 
 It is a simple grid game written in HTML CSS and vanilla javaScript.
 
-<img src="screenshot.png" alt="Nubel Screenshot" width="500" height="500"/>
+<img src="screenshot.png" alt="Nubel Screenshot"/>
 
 ## How to play
 
