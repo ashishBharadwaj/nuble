@@ -1,4 +1,4 @@
-# nubble
+# nuble
 
 It is a simple grid game written in HTML CSS and vanilla javaScript.
 
