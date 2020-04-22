@@ -2,7 +2,7 @@
 
 It is a simple grid game written in HTML CSS and vanilla javaScript.
 
-![nubble] (assets/screenshot.jpg)
+![nubble] (./assets/screenshot.jpg)
 
 ## How to play
 
