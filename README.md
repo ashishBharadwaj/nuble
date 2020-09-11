@@ -1,4 +1,4 @@
-# nuble
+# nuble [**Play Now**](https://ashishbharadwaj.github.io/nuble/)
 
 It is a simple grid game written in HTML CSS and vanilla javaScript.
 
