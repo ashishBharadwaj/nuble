@@ -6,12 +6,7 @@ It is a simple grid game written in HTML CSS and vanilla javaScript.
 
 ## How to play
 
-- Clone the repo:
-
-```bash
-$ git clone https://github.com/ashishBharadwaj/nuble.git
-```
-- Open the Nuble.html file present in HTML folder
+- [**Play Now**](https://ashishbharadwaj.github.io/nuble/)
 
 - On click of new game a random 4 X 4 grid of numbers is generated with one blank space 
 
