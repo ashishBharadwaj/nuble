@@ -4,16 +4,16 @@ html {
     margin: auto;
     min-width: 600px;
 }
-
+.mainContainer{
+    display: grid;
+    grid-template-rows: 100px calc(100vh - 100px);
+}
 .header {
-    width: 100%;
-    height: 100px;
     background-color: #f4b321;
 }
 
 .gameContainer {
     background-color: #73cfe8;
-    height: 100%;
 }
 
 .leftLayoutContainer,
